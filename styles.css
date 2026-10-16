@@ -115,3 +115,16 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 18px}
   td.v{white-space:normal;font-size:11.5px}
   td.num{white-space:normal}
 }
+/* FAQ */
+.faq{display:grid;border-top:1px solid var(--rule)}
+.faq details{border-bottom:1px solid var(--rule);padding:12px 0}
+.faq summary{cursor:pointer;font:700 16px/1.4 var(--display);list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:600 18px/1 var(--mono);color:var(--accent)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:8px;font-size:16px;color:var(--ink-2)}
+.guides{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.guides a{display:grid;gap:4px;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:14px;text-decoration:none;color:inherit;min-width:0}
+.guides a:hover h3{text-decoration:underline}
+.guides span{font-size:15px;color:var(--ink-2)}
+@media (max-width:620px){.guides{grid-template-columns:1fr}}

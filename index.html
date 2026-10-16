@@ -46,7 +46,7 @@
         <a class="brief" href="/make-more-offers-challenge">
           <h3>Make More Offers Challenge</h3><span class="chip paused">Paused</span>
           <p>Five-day live online challenge. Registration is paused; no reopening date is published.</p>
-          <span class="price">Last published tickets: $97 · $297 VIP</span>
+          <span class="price">Last published tickets: $97 · $297 VIP · +$500 Platinum</span>
         </a>
         <a class="brief" href="/boss-moves-book">
           <h3>B.O.S.S. Moves (book)</h3><span class="chip open">On sale</span>
@@ -58,21 +58,33 @@
           <p>Bundle of audio courses, workbooks, books and event tickets. No guarantee is stated on the sales page.</p>
           <span class="price">$4,997 one payment · 2 × $597 shown as exit offer</span>
         </a>
-        <div class="brief">
+        <a class="brief" href="/trash-man-to-cash-man-book">
           <h3>From the Trash Man to the Cash Man (book)</h3><span class="chip open">On sale</span>
-          <p>Printed book with an optional audiobook. Full brief coming.</p>
-          <span class="price">$19.99 + shipping · audiobook $37</span>
-        </div>
-        <div class="brief">
+          <p>The lowest-cost Myron Golden book, about money principles and beliefs. Optional audiobook.</p>
+          <span class="price">$19.99 + $9.99 US / $24.99 international shipping</span>
+        </a>
+        <a class="brief" href="/golden-ops">
           <h3>Golden OPS</h3><span class="chip open">On sale</span>
-          <p>Program about selling other people's products. Described as non-refundable. Full brief coming.</p>
+          <p>Program about selling other people's products. Non-refundable, no guarantee stated.</p>
           <span class="price">$999 one time</span>
-        </div>
-        <div class="brief">
+        </a>
+        <a class="brief" href="/myron-golden-events-2026">
           <h3>Offer Mastery Live</h3><span class="chip closed">No current date</span>
           <p>The official event page still shows the May 21–23, 2024 event in Tampa. We found no current date.</p>
           <span class="price">Last listed: $997 · $1,997 · $2,997</span>
-        </div>
+        </a>
+      </div>
+    </section>
+
+
+    <section aria-labelledby="guides-h">
+      <p class="eyebrow">Guides</p>
+      <h2 id="guides-h">Before you buy anything</h2>
+      <div class="guides">
+        <a href="/myron-golden-refund-policy"><h3>Refund rules by product</h3><span>What you can and cannot get back</span></a>
+        <a href="/myron-golden-books"><h3>Which book first?</h3><span>B.O.S.S. Moves vs. Trash Man to Cash Man</span></a>
+        <a href="/make-more-offers-challenge-reviews"><h3>Challenge reviews</h3><span>What is documented and what is only claimed</span></a>
+        <a href="/myron-golden-events-2026"><h3>Events in 2026</h3><span>What you can book right now</span></a>
       </div>
     </section>
 
@@ -152,8 +164,9 @@
       r = ['Make More Offers Challenge', 'Live sessions over five days. General Admission was $97 with no refunds. Registration is paused right now.', 'make-more-offers-challenge.html'];
     } else {
       r = ['B.O.S.S. Moves (book)', sells === 'no'
-        ? 'A low-cost first step before you spend more. The cheaper title is From the Trash Man to the Cash Man at $19.99. Check shipping for your country.'
-        : 'The lowest-cost way to see if the approach suits you. Check the shipping cost for your country first.', 'boss-moves-book.html'];
+        ? 'A low-cost first step before you spend more. Check shipping for your country.'
+        : 'The lowest-cost way to see if the approach suits you. Check the shipping cost for your country first.', sells === 'no' ? 'trash-man-to-cash-man-book.html' : 'boss-moves-book.html'];
+      if (sells === 'no' && !(budget === 'high' && style === 'audio') && style !== 'live') r[0] = 'From the Trash Man to the Cash Man (book)';
     }
     t.textContent = r[0]; x.textContent = r[1]; l.href = r[2];
   }
